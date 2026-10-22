@@ -1,0 +1,487 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: 248px minmax(0, 1fr);
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 16px 14px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 8px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-mark {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  color: var(--text);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-mark-suzuki {
+  width: 58px;
+  height: 30px;
+  padding: 5px 7px;
+  background: #ffffff;
+  border-color: var(--border-strong);
+}
+
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 1px;
+}
+
+.brand-copy strong {
+  overflow: hidden;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand-copy small {
+  overflow: hidden;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-nav {
+  margin-top: 14px;
+}
+
+.nav-label {
+  display: block;
+  padding: 0 10px 8px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 9px;
+  padding: 8px 10px;
+  font-size: 12.5px;
+  font-weight: 450;
+  color: var(--text-secondary);
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  transition:
+    color 140ms ease,
+    background-color 140ms ease,
+    border-color 140ms ease;
+}
+
+.nav-item:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+}
+
+.nav-item[aria-current="page"] {
+  color: var(--text);
+  background: var(--surface-active);
+  border-color: var(--border);
+}
+
+.nav-item svg {
+  flex: none;
+  color: currentColor;
+  opacity: 0.8;
+}
+
+.nav-item-tag {
+  padding: 1px 5px;
+  margin-left: auto;
+  font-size: 9.5px;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+}
+
+.theme-control {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.theme-control-label {
+  padding: 0 2px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.theme-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  padding: 2px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 8px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  transition:
+    color 140ms ease,
+    background-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.theme-option:hover {
+  color: var(--text-secondary);
+}
+
+.theme-option[aria-pressed="true"] {
+  color: var(--text);
+  background: var(--surface-active);
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar-version {
+  padding: 0 2px;
+  font-size: 9.5px;
+  color: var(--text-muted);
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 52px;
+  padding: 0 28px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.breadcrumb-separator {
+  color: var(--border-strong);
+}
+
+.breadcrumb-current {
+  overflow: hidden;
+  color: var(--text-secondary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.env-badge {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 8px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+.env-badge-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--text-muted);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--surface-elevated);
+}
+
+.page-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1430px;
+  padding: 26px 28px 32px;
+  margin: 0 auto;
+}
+
+.page-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.page-head > div {
+  min-width: 0;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.page-head h1 {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+
+.page-head p {
+  max-width: 590px;
+  margin-top: 5px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.page-head > .status-chip {
+  margin-top: 5px;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 28px;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 1080px) {
+  .app-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    gap: 18px;
+    padding: 10px 24px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    flex: none;
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  .brand-copy small {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    min-width: 0;
+    margin-top: 0;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 4px;
+  }
+
+  .nav-item {
+    width: auto;
+    padding: 7px 10px;
+  }
+
+  .nav-item-tag {
+    display: none;
+  }
+
+  .sidebar-footer {
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin-top: 0;
+    border-top: 0;
+  }
+
+  .theme-control {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .theme-control-label,
+  .sidebar-version {
+    display: none;
+  }
+
+  .topbar {
+    top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 16px;
+  }
+
+  .brand {
+    flex: 1;
+  }
+
+  .brand-mark-suzuki {
+    width: 52px;
+    height: 28px;
+    padding: 5px 6px;
+  }
+
+  .sidebar-footer {
+    order: 2;
+  }
+
+  .sidebar-nav {
+    flex-basis: 100%;
+    order: 3;
+  }
+
+  .nav-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-item {
+    justify-content: center;
+  }
+
+  .theme-option {
+    padding: 7px 10px;
+  }
+
+  .theme-option span {
+    display: none;
+  }
+
+  .topbar {
+    height: 48px;
+    padding: 0 16px;
+  }
+
+  .page-content {
+    padding: 20px 16px 26px;
+  }
+
+  .page-head {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .page-head h1 {
+    font-size: 22px;
+  }
+
+  .page-head p {
+    font-size: 12px;
+  }
+
+  .app-footer {
+    padding: 14px 16px;
+  }
+}
