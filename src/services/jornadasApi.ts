@@ -6,10 +6,14 @@ import {
   type Persona,
 } from '../types/jornada';
 
-const API_BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL?.trim() ||
-  'http://127.0.0.1:3000/api'
-).replace(/\/+$/, '');
+const API_BASE_URL = (() => {
+  const base = (
+    import.meta.env.VITE_API_BASE_URL?.trim() ||
+    'http://127.0.0.1:3000/api'
+  ).replace(/\/+$/, '');
+
+  return base.endsWith('/api') ? base : `${base}/api`;
+})();
 
 type TipoErrorApi = 'conexion' | 'http' | 'respuesta';
 
